@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/zucred/Specs.git'
+
+use_frameworks!
+
+pod "VMStorage", :path => '../../VMStorage'
+
+pod 'VMLogger'
+pod 'Firebase/Auth'
+pod 'Firebase/Storage'
+pod 'SDWebImage'
+
+target 'VMStorage-Example' do
+
+end
+
+target 'VMStorage-ExampleTests' do
+  pod "VMStorage", :path => '../../VMStorage'
+end
+
+target 'VMStorage-ExampleUITests' do
+  pod "VMStorage", :path => '../../VMStorage'
+end

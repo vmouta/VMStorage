@@ -1,0 +1,6 @@
+framework module Pods_VMStorage_Example {
+  umbrella header "Pods-VMStorage-Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

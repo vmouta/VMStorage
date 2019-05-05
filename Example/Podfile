@@ -8,6 +8,7 @@ pod "VMStorage", :path => '../../VMStorage'
 pod 'VMLogger'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Firebase/RemoteConfig'
 pod 'SDWebImage'
 
 target 'VMStorage-Example' do

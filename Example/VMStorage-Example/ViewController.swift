@@ -17,7 +17,9 @@ class ViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
 
-    var storageRef: FIRStorageReference!
+    lazy var storageRef: FIRStorageReference! = {
+        return FIRStorage.storage().reference()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +53,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

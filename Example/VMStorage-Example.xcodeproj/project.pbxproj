@@ -10,6 +10,7 @@
 		03FC0611DFB9873B6BCDF46D /* Pods_VMStorage_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353D8EB5BA141DCF91CCC09D /* Pods_VMStorage_ExampleTests.framework */; };
 		48F3A25FB7EDBCC8136C6C0F /* Pods_VMStorage_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6853A5BAC208C39C4B2066E /* Pods_VMStorage_Example.framework */; };
 		A32CA31B1A310B42C15E537D /* Pods_VMStorage_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E2C1539E86A40C5CE2769D /* Pods_VMStorage_ExampleUITests.framework */; };
+		BC111EDE1E670A69006A454F /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC111EDD1E670A69006A454F /* RemoteConfigDefaults.plist */; };
 		BC405A251E631C250057FDAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC405A241E631C250057FDAD /* AppDelegate.swift */; };
 		BC405A271E631C250057FDAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC405A261E631C250057FDAD /* ViewController.swift */; };
 		BC405A2A1E631C250057FDAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC405A281E631C250057FDAD /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		65BEAE1343B7483AB06E2B98 /* Pods-VMStorage-ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMStorage-ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VMStorage-ExampleUITests/Pods-VMStorage-ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		675F78A2D92E0BD4AB9D4A12 /* Pods-VMStorage-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMStorage-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VMStorage-Example/Pods-VMStorage-Example.release.xcconfig"; sourceTree = "<group>"; };
 		80A65EEFF5521B5F60501C5E /* Pods-VMStorage-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMStorage-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VMStorage-ExampleTests/Pods-VMStorage-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC111EDD1E670A69006A454F /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		BC405A211E631C250057FDAD /* VMStorage-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VMStorage-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC405A241E631C250057FDAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC405A261E631C250057FDAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		BC405A231E631C250057FDAD /* VMStorage-Example */ = {
 			isa = PBXGroup;
 			children = (
+				BC111EDD1E670A69006A454F /* RemoteConfigDefaults.plist */,
 				BC405A521E631E860057FDAD /* GoogleService-Info.plist */,
 				BC405A241E631C250057FDAD /* AppDelegate.swift */,
 				BC405A261E631C250057FDAD /* ViewController.swift */,
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC405A2F1E631C250057FDAD /* LaunchScreen.storyboard in Resources */,
+				BC111EDE1E670A69006A454F /* RemoteConfigDefaults.plist in Resources */,
 				BC405A531E631E860057FDAD /* GoogleService-Info.plist in Resources */,
 				BC405A2C1E631C250057FDAD /* Assets.xcassets in Resources */,
 				BC405A2A1E631C250057FDAD /* Main.storyboard in Resources */,

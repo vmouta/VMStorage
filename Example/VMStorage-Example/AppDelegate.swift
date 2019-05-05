@@ -14,12 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    lazy var remoteConfig: FIRRemoteConfig! = {
+        return FIRRemoteConfig.remoteConfig()
+    }()
+    
     override init() {
         FIRApp.configure()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Create Remote Config Setting to enable developer mode.
+        // Fetching configs from the server is normally limited to 5 requests per hour.
+        // Enabling developer mode allows many more requests to be made per hour, so developers
+        // can test different config values during development.
+        let remoteConfigSettings = FIRRemoteConfigSettings(developerModeEnabled: true)
+        remoteConfig.configSettings = remoteConfigSettings!
+        remoteConfig.setDefaultsFromPlistFileName("RemoteConfigDefaults")
+        
+        fetchConfig()
+        
         return true
     }
 
@@ -44,7 +59,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func fetchConfig() {
+        var expirationDuration = 3600
+        // If in developer mode cacheExpiration is set to 0 so each fetch will retrieve values from the server.
+        if remoteConfig.configSettings.isDeveloperModeEnabled {
+            expirationDuration = 0
+        }
+        
+        // cacheExpirationSeconds is set to cacheExpiration here, indicating that any previously
+        // fetched and cached config would be considered expired because it would have been fetched
+        // more than cacheExpiration seconds ago. Thus the next fetch would go to the server unless
+        // throttling is in progress. The default expiration duration is 43200 (12 hours).
+        remoteConfig.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { (status, error) -> Void in
+            if status == .success {
+                print("App Remote Config fetched!")
+                self.remoteConfig.activateFetched()
+                print(self.remoteConfig["app_status"].stringValue)
+            } else {
+                print("App Remote Config fetch fail: \(error!.localizedDescription)")
+            }
+        }
+    }
 
 }
 
